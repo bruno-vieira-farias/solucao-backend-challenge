@@ -18,7 +18,7 @@ internal class ValidacaoSenhaServiceImpTest{
                 Executable { assertFalse(validador.validaSenha("AbTp9!foo")) },
                 Executable { assertFalse(validador.validaSenha("AbTp9!foA")) },
                 Executable { assertFalse(validador.validaSenha("AbTp9 fok")) },
-                Executable { assertTrue(validador.validaSenha("AbTp9!fok")) },
+                Executable { assertTrue(validador.validaSenha("AbTp9!fok")) }
         )
     }
 }
