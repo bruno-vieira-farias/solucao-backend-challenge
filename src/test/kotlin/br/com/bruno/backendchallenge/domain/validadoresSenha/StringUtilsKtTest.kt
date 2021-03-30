@@ -28,7 +28,19 @@ internal class StringUtilsKtTest{
         assertAll(
                 Executable { assertTrue("".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 0)) },
                 Executable { assertTrue("1@".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) },
-                Executable { assertTrue("12!(".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 2)) }
+                Executable { assertTrue("12!(".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 2)) },
+                Executable { assertTrue("!".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) },
+                Executable { assertTrue("@".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) },
+                Executable { assertTrue("#".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) },
+                Executable { assertTrue("$".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) },
+                Executable { assertTrue("%".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) },
+                Executable { assertTrue("^".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) },
+                Executable { assertTrue("&".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) },
+                Executable { assertTrue("*".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) },
+                Executable { assertTrue("(".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) },
+                Executable { assertTrue(")".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) },
+                Executable { assertTrue("-".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) },
+                Executable { assertTrue("+".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) }
         )
     }
 
