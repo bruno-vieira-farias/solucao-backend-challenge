@@ -34,13 +34,13 @@ internal class ValidacaoSenhaControllerRetornoErroTest {
         `when`(service.validaSenha("")).thenThrow(IllegalArgumentException::class.java)
 
         val entradaDtoAsJSON = objectMapper.writeValueAsString(EntradaDto(""))
-        val retornoSucessoDtoAsJSON = objectMapper.writeValueAsString(RetornoErroDto("Ocorreu um erro nao mapeado."))
+        val retornoDtoAsJSON = objectMapper.writeValueAsString(RetornoDto(isSenhaValida = null, possuiErro = true))
 
         val resultado = enviaRequisicaoHttpPost(mockMvc, endpoint, entradaDtoAsJSON)
 
         assertAll(
                 Executable { assertEquals(resultado.response.status, HttpStatus.INTERNAL_SERVER_ERROR.value()) },
-                Executable { assertEquals(resultado.response.contentAsString, retornoSucessoDtoAsJSON) }
+                Executable { assertEquals(resultado.response.contentAsString, retornoDtoAsJSON) }
         )
     }
 

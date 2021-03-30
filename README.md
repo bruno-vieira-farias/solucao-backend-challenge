@@ -1,17 +1,19 @@
 ### Run
 A aplicação pode ser executada diretamente pelo jdk java ou ainda utilizando container Docker.
 
-#### Executando com o maven e jdk Java.
-Com o jdk11 instalado em seu sistema operacional, execute o comando na raiz do projeto:  
+#### Executando com o maven.
+Com o jdk11 instalado no seu sistema operacional, execute o comando na raiz do projeto:  
 * No Windows `$ mvnw spring-boot:run`  
 * No Linux/Mac `$ ./mvnw spring-boot:run`
  
 #### Executando com Docker.
 Com o docker e docker-compose disponíveis em seu sistema, execute o comando `$ docker-compose up` na raiz do projeto.
 
-##Um pouco sobre a solução.
+### Documentação da API - Swagger
+A documentação da API esta disponível no endpoint `/swagger-ui.html`.
 
-#### Validadores disponíveis em [StringUtils.kt](src/main/kotlin/br/com/bruno/backendchallenge/support/StringUtils.kt).
+##Um pouco sobre a solução.
+#### Validadores em [StringUtils.kt](src/main/kotlin/br/com/bruno/backendchallenge/support/StringUtils.kt).
 Foi utilizado o recurso [extensions](https://kotlinlang.org/docs/extensions.html) do kotlin sobre a classe `String`, com isso:
 * Podemos chamar as funções a partir de qualquer `String` de forma simples e fluída. Por exemplo `senha.possuiEspacosEmBranco()`.
 * Todas as extensões criadas extendem de `String` pois elas tem potencial de serem usadas em outros contextos, não apenas na validação da senha.

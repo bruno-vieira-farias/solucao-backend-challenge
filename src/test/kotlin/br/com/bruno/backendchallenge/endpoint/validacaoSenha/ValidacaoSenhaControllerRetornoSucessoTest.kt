@@ -26,26 +26,26 @@ internal class ValidacaoSenhaControllerRetornoSucessoTest {
     @Test
     fun `Retorno de SUCESSO com senha VÁLIDA`() {
         val entradaDtoAsJSON = objectMapper.writeValueAsString(EntradaDto(senha = "AbTp9!fok"))
-        val retornoSucessoDtoAsJSON = objectMapper.writeValueAsString(RetornoSucessoDto(isSenhaValida = true))
+        val retornoDtoAsJSON = objectMapper.writeValueAsString(RetornoDto(isSenhaValida = true, possuiErro = false))
 
         val resultado = enviaRequisicaoHttpPost(mockMvc, endpoint, entradaDtoAsJSON)
 
         assertAll(
                 Executable { assertEquals(resultado.response.status, HttpStatus.OK.value()) },
-                Executable { assertEquals(resultado.response.contentAsString, retornoSucessoDtoAsJSON) }
+                Executable { assertEquals(resultado.response.contentAsString, retornoDtoAsJSON) }
         )
     }
 
     @Test
     fun `Retorno de SUCESSO com senha INVÀLIDA`() {
         val entradaDtoAsJSON = objectMapper.writeValueAsString(EntradaDto(senha = "AbTp9 fok"))
-        val retornoSucessoDtoAsJSON = objectMapper.writeValueAsString(RetornoSucessoDto(isSenhaValida = false))
+        val retornoDtoAsJSON = objectMapper.writeValueAsString(RetornoDto(isSenhaValida = false, possuiErro = false))
 
         val resultado = enviaRequisicaoHttpPost(mockMvc, endpoint, entradaDtoAsJSON)
 
         assertAll(
                 Executable { assertEquals(resultado.response.status, HttpStatus.OK.value()) },
-                Executable { assertEquals(resultado.response.contentAsString, retornoSucessoDtoAsJSON) }
+                Executable { assertEquals(resultado.response.contentAsString, retornoDtoAsJSON) }
         )
     }
 }

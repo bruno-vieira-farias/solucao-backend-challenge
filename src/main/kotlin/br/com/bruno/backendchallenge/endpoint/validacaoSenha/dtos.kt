@@ -2,23 +2,18 @@ package br.com.bruno.backendchallenge.endpoint.validacaoSenha
 
 
 /**
- * Utilizado como objeto de entrada.
+ * Dto utilizado para no parametro de entrada do endpoint.
  */
 data class EntradaDto(
         val senha: String
 )
 
 /**
- * Utilizado como objeto de sucesso, ou seja, quando idependente do retorno em [isSenhaValida] ser `true` ou `false`,
- *  o processamento não apresentou nenhum erro.
+ * Dto utilizado no retorno do endpoint.
+ *
+ *  O valor de [isSenhaValida] pode ser nulo quando ocorrer algum erro durante o processamento da validação.
  */
-data class RetornoSucessoDto(
-        val isSenhaValida: Boolean
-)
-
-/**
- * Utilizado no retorno quando ocorre algum erro durante o processamento da requisição.
- */
-data class RetornoErroDto(
-        val mensagemErro: String
+data class RetornoDto(
+        val isSenhaValida: Boolean?,
+        val possuiErro: Boolean
 )
