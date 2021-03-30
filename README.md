@@ -1,5 +1,9 @@
 ## Run
-Para executar a aplicação rode o comando `$ mvn spring-boot:run` no diretorio raiz do projeto.
+Para executar a aplicação rode o comando no diretorio raiz do projeto.
+ Windows `$ mvnw spring-boot:run` 
+ Linux/Mac `$ .mvnw spring-boot:run`
+ 
+ TODO - Adicionar as opções docker 
 
 #### Sobre os validadores disponíveis em [StringUtils.kt](src/main/kotlin/br/com/bruno/backendchallenge/support/StringUtils.kt).
 Foi utilizado o recurso [extensions](https://kotlinlang.org/docs/extensions.html) do kotlin que extende funcionalidades sobre a classe `String`, com isso:
