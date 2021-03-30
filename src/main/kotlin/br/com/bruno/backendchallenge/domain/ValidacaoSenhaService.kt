@@ -8,7 +8,7 @@ interface ValidacaoSenhaService {
      *      - Possuir ao menos 1 dígito e;
      *      - Possuir ao menos 1 letra minúscula e;
      *      - Possuir ao menos 1 letra maiúscula e;
-     *      - Possuir ao menos 1 caractere especial ( !@#$%^&*()-+ ) e;
+     *      - Possuir ao menos 1 caractere especial e;
      *      - Não possuir caracteres repetidos e;
      *      - Não possuir espaços em branco.
      */

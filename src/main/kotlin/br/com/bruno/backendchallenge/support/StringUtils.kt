@@ -7,6 +7,8 @@ fun String.possuiEspacosEmBranco() = this.any { it == ' ' }
 
 /**
  *  Retorna `true` quando a [String] possuir caracteres repetidos.
+ *
+ *  Esta função é `case sensitive`, ou seja, os caracteres 'A' e 'a' distintos.
  */
 fun String.possuiCaracteresRepetidos(): Boolean {
     return this.groupBy { it }
@@ -34,7 +36,7 @@ fun String.possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresE
  */
 fun String.possuiQuantidadeMinimaCaracteres(quantidadeMinimaCaracteres: Int) : Boolean {
     if (quantidadeMinimaCaracteres < 0) {
-        throw java.lang.IllegalArgumentException()
+        throw IllegalArgumentException()
     }
     return this.length >= quantidadeMinimaCaracteres
 }
@@ -46,7 +48,7 @@ fun String.possuiQuantidadeMinimaCaracteres(quantidadeMinimaCaracteres: Int) : B
  */
 fun String.possuiQuantidadeMinimaDigitos(quantidadeMinimaDigitos: Int): Boolean {
     if (quantidadeMinimaDigitos < 0) {
-        throw java.lang.IllegalArgumentException("")
+        throw IllegalArgumentException()
     }
     return this.filter { it.isDigit() }.length >= quantidadeMinimaDigitos
 }
@@ -54,11 +56,11 @@ fun String.possuiQuantidadeMinimaDigitos(quantidadeMinimaDigitos: Int): Boolean 
 /**
  * Retorna `true` quando a [String] possuir uma quantidade de letras maiúsculas maior ou igual à [quantidadeMinimaLetrasMaiusculas].
  *
- * Lança um [IllegalArgumentException] caso em [quantidadeMinimaLetrasMaiusculas] seja negativa.
+ * Lança um [IllegalArgumentException] caso a [quantidadeMinimaLetrasMaiusculas] seja negativa.
  */
 fun String.possuiQuantidadeMinimaLetrasMaiusculas(quantidadeMinimaLetrasMaiusculas: Int) : Boolean {
     if (quantidadeMinimaLetrasMaiusculas < 0) {
-        throw java.lang.IllegalArgumentException()
+        throw IllegalArgumentException()
     }
     return this.filter { it.isUpperCase() }.length >= quantidadeMinimaLetrasMaiusculas
 }

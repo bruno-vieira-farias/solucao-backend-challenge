@@ -25,9 +25,7 @@ class ValidacaoSenhaController(
     @ExceptionHandler(Exception::class)
     fun capturaExcecoes(ex: Exception): ResponseEntity<RetornoErroDto> {
         logger.error(ex.stackTraceToString())
-        return ResponseEntity(RetornoErroDto(
-                mensagem = "Ocorreu um erro nao mapeado."),
-                HttpStatus.INTERNAL_SERVER_ERROR
-        )
+
+        return ResponseEntity(RetornoErroDto(mensagemErro = "Ocorreu um erro nao mapeado."),HttpStatus.INTERNAL_SERVER_ERROR)
     }
 }

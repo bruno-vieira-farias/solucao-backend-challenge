@@ -1,5 +1,6 @@
-package br.com.bruno.backendchallenge.domain.validadoresSenha
+package br.com.bruno.backendchallenge.support
 
+import br.com.bruno.backendchallenge.domain.validadoresSenha.*
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.function.Executable
@@ -19,7 +20,8 @@ internal class StringUtilsKtTest{
     fun `String NAO POSSUI caracteres repetidos portanto DEVE retornar FALSE`() {
         assertAll(
                 Executable { assertFalse("abc".possuiCaracteresRepetidos()) },
-                Executable { assertFalse("123".possuiCaracteresRepetidos()) }
+                Executable { assertFalse("123".possuiCaracteresRepetidos()) },
+                Executable { assertFalse("Aa".possuiCaracteresRepetidos()) }
         )
     }
 
@@ -49,12 +51,13 @@ internal class StringUtilsKtTest{
         assertAll(
                 Executable { assertFalse("a".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) },
                 Executable { assertFalse("1@".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 2)) },
-                Executable { assertFalse("12!(".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 5)) }
+                Executable { assertFalse("12!(".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 5)) },
+                Executable { assertFalse("=".possuiQuantidadeMinimaCaracteresEspeciais(quantidadeMinimaCaracteresEspeciais = 1)) }
         )
     }
 
     @Test
-    fun `String passando parametro NEGATIVO na funcao possuiQuantidadeMinimaCaracteresEspeciais DEVE LANÇAR uma IllegalArgumentException`(){
+    fun `Passando parametro NEGATIVO na funcao possuiQuantidadeMinimaCaracteresEspeciais DEVE LANÇAR uma IllegalArgumentException`(){
         assertThrows(IllegalArgumentException::class.java) {
             "qualquer texto".possuiQuantidadeMinimaCaracteresEspeciais(-1)
             "qualquer texto".possuiQuantidadeMinimaCaracteresEspeciais(-2)
@@ -129,11 +132,11 @@ internal class StringUtilsKtTest{
     }
 
     @Test
-    fun `String passando parametro NEGATIVO para a funcao possuiQuantidadeMinimaDigitos() DEVE LANÇAR uma IllegalArgumentException`(){
+    fun `Passando parametro NEGATIVO para a funcao possuiQuantidadeMinimaDigitos() DEVE LANÇAR uma IllegalArgumentException`(){
         assertThrows(IllegalArgumentException::class.java) {
-            "qualquer text0".possuiQuantidadeMinimaDigitos(quantidadeMinimaDigitos = -1)
-            "qualquer text0".possuiQuantidadeMinimaDigitos(quantidadeMinimaDigitos = -2)
-            "qualquer text0".possuiQuantidadeMinimaDigitos(quantidadeMinimaDigitos = -20)
+            "qualquer texto".possuiQuantidadeMinimaDigitos(quantidadeMinimaDigitos = -1)
+            "qualquer texto".possuiQuantidadeMinimaDigitos(quantidadeMinimaDigitos = -2)
+            "qualquer texto".possuiQuantidadeMinimaDigitos(quantidadeMinimaDigitos = -20)
         }
     }
 
@@ -158,7 +161,7 @@ internal class StringUtilsKtTest{
     }
 
     @Test
-    fun `String passando parametro NEGATIVO para funcao validaQuantidadeMinimaLetrasMaiusculas() DEVE LANÇAR uma IllegalArgumentException`(){
+    fun `Passando parametro NEGATIVO para funcao validaQuantidadeMinimaLetrasMaiusculas() DEVE LANÇAR uma IllegalArgumentException`(){
         assertThrows(IllegalArgumentException::class.java) {
             "qualquer texto".possuiQuantidadeMinimaLetrasMaiusculas(quantidadeMinimaLetrasMaiusculas =-1)
             "qualquer texto".possuiQuantidadeMinimaLetrasMaiusculas(quantidadeMinimaLetrasMaiusculas =-2)
@@ -185,7 +188,7 @@ internal class StringUtilsKtTest{
     }
 
     @Test
-    fun `String passando um parametro negativo para a funcao possuiQuantidadeMinimaLetrasMinusculas() DEVE LANCAR uma IllegalArgumentException`(){
+    fun `Passando um parametro negativo para a funcao possuiQuantidadeMinimaLetrasMinusculas() DEVE LANCAR uma IllegalArgumentException`(){
         assertThrows(IllegalArgumentException::class.java) {
             "qualquer texto".possuiQuantidadeMinimaLetrasMinusculas(quantidadeMinimaLetrasMinusculas = -1)
             "qualquer texto".possuiQuantidadeMinimaLetrasMinusculas(quantidadeMinimaLetrasMinusculas = -2)

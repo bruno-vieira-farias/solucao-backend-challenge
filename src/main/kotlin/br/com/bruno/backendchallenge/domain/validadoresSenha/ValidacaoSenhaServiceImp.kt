@@ -18,7 +18,7 @@ class ValidacaoSenhaServiceImp(
             require(!senha.possuiCaracteresRepetidos())
             require(!senha.possuiEspacosEmBranco())
         } catch (e: IllegalArgumentException) {
-            /* Abafa excecoes esperadas */
+            /* Abafa exceções esperadas */
             return false
         }
 
