@@ -1,4 +1,4 @@
-package br.com.bruno.backendchallenge.domain.ValidadoresSenha
+package br.com.bruno.backendchallenge.domain.validadoresSenha
 
 import br.com.bruno.backendchallenge.domain.ValidacaoSenhaService
 import org.junit.jupiter.api.Assertions.*

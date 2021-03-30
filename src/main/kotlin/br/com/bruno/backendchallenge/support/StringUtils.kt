@@ -1,4 +1,4 @@
-package br.com.bruno.backendchallenge.domain.ValidadoresSenha
+package br.com.bruno.backendchallenge.domain.validadoresSenha
 
 /**
  *  Retorna `true` quando a [String] possuir espaços em branco.

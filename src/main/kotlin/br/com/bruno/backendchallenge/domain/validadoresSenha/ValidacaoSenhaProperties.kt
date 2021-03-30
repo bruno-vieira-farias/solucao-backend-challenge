@@ -1,4 +1,4 @@
-package br.com.bruno.backendchallenge.domain.ValidadoresSenha
+package br.com.bruno.backendchallenge.domain.validadoresSenha
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component

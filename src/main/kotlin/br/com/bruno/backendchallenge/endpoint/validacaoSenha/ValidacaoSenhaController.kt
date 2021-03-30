@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
-
 @RestController
 class ValidacaoSenhaController(
         private val validadorSenhaService: ValidacaoSenhaService
@@ -24,9 +23,8 @@ class ValidacaoSenhaController(
     }
 
     @ExceptionHandler(Exception::class)
-    fun capturaValidacoesBeanValidation(ex: Exception): ResponseEntity<RetornoErroDto> {
+    fun capturaExcecoes(ex: Exception): ResponseEntity<RetornoErroDto> {
         logger.error(ex.stackTraceToString())
-
         return ResponseEntity(RetornoErroDto(
                 mensagem = "Ocorreu um erro nao mapeado."),
                 HttpStatus.INTERNAL_SERVER_ERROR
