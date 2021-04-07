@@ -10,7 +10,7 @@ Com o jdk11 instalado no seu sistema operacional, execute o comando na raiz do p
 Com o docker e docker-compose disponíveis no seu sistema, execute o comando `$ docker-compose up` na raiz do projeto.
 
 ### Documentação da API - Swagger
-A documentação da API esta disponível no endpoint `/swagger-ui.html`.
+A documentação da API esta disponível no endpoint `/swagger-ui/index.html`.
 
 ### Um pouco sobre a solução.
 
